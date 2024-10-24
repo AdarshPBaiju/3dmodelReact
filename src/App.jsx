@@ -105,10 +105,11 @@ const ZoomableCanvas = ({ modelPath, lighting }) => {
 
 // Main App component
 const App = () => {
+  const baseURL = "https://adarshpbaiju.github.io/3dmodelReact/";
   // Array of model paths, names, and custom lighting settings
   const models = [
     {
-      path: "/table.glb",
+      path: "table.glb",
       name: "Table",
       lighting: {
         ambientLight: { intensity: 2 },
@@ -121,7 +122,7 @@ const App = () => {
       }
     },
     {
-      path: "/samsung.glb",
+      path: "samsung.glb",
       name: "Samsung",
       lighting: {
         ambientLight: { intensity: 3 },
@@ -133,7 +134,7 @@ const App = () => {
       }
     },
     {
-      path: "/base_basic_shaded.glb",
+      path: "base_basic_shaded.glb",
       name: "fox",
       lighting: {
         ambientLight: { intensity: 3 },
@@ -145,7 +146,7 @@ const App = () => {
       }
     },
     {
-      path: "/iphone_16_plus_green.glb",
+      path: "iphone_16_plus_green.glb",
       name: "Iphone 16 Plus Green",
       lighting: {
         ambientLight: { intensity: 3 },
@@ -157,7 +158,7 @@ const App = () => {
       }
     },
     {
-      path: "/base.glb",
+      path: "base.glb",
       name: "Gaming Chair",
       lighting: {
         ambientLight: { intensity: 3 },
@@ -169,7 +170,7 @@ const App = () => {
       }
     },
     {
-      path: "/asusrog.glb",
+      path: "asusrog.glb",
       name: "Asus ROG",
       lighting: {
         ambientLight: { intensity: 1.5 },
@@ -188,7 +189,7 @@ const App = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl">
         {models.map((model, index) => (
           <div key={index} className="bg-white rounded-lg shadow-md p-4">
-            <ZoomableCanvas modelPath={model.path} lighting={model.lighting} />
+            <ZoomableCanvas modelPath={`${baseURL}/${model.path}`} lighting={model.lighting} />
             <h2 className="mt-4 text-center text-lg font-semibold text-gray-700">{model.name}</h2>
           </div>
         ))}
